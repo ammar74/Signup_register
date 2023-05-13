@@ -39,12 +39,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (!validateUsername() | !validatePassword()){
-
-                }else {
-                   userCheck();
+                if (validateUsername() | validatePassword()){
+                    userCheck();
                 }
-
             }
         });
 
@@ -92,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                     loginUsername.setError(null);
                     String passwordFromDB= snapshot.child(userUsername).child("password").getValue(String.class);
 
-                    if (!Objects.equals(userUsername,passwordFromDB)){
+                    if (Objects.equals(passwordFromDB,userPassword)){
                         loginUsername.setError(null);
                         Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);

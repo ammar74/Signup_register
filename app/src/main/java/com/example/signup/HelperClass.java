@@ -9,8 +9,9 @@ public class HelperClass {
     public HelperClass(String name, String email, String username,String password) {
         this.name = name;
         this.email = email;
-        this.password = password;
         this.username = username;
+        this.password = password;
+
     }
 
     public String getName() {
